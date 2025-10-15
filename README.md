@@ -20,7 +20,7 @@ L’application utilise **Express** pour exposer une API, que la CLI consomme vi
 ```
 backEndExercice1ChloeDallais/
 │
-├─ index.js                # Entrée du serveur Express
+├─ server.js               # Entrée du serveur Express
 ├─ package.json            # Dépendances Node.js
 ├─ .env                    # Variables d'environnement
 ├─ .env.example            # Exemple de fichier .env
@@ -60,7 +60,7 @@ Copier env.example en .env et modifier si nécessaire.
 4. Lancer le serveur Express :
 
 ```bash
-node index.js
+node server.js
 ```
 
 5. Lancer l’application CLI dans un autre terminal :
