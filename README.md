@@ -22,6 +22,8 @@ backEndExercice1ChloeDallais/
 │
 ├─ index.js                # Entrée du serveur Express
 ├─ package.json            # Dépendances Node.js
+├─ .env                    # Variables d'environnement
+├─ .env.example            # Exemple de fichier .env
 ├─ models/
 │  ├─ task.js              # Classe Task
 │  └─ todolist.js          # Classe ToDoList
@@ -50,19 +52,24 @@ cd backEndExercice1ChloeDallais
 npm install
 ```
 
-3. Lancer le serveur Express :
+3. Configuration des variables d'environnement :
+
+Copier env.example en .env et modifier si nécessaire.
+
+
+4. Lancer le serveur Express :
 
 ```bash
 node index.js
 ```
 
-4. Lancer l’application CLI dans un autre terminal :
+5. Lancer l’application CLI dans un autre terminal :
 
 ```bash
 node cli/cli.js
 ```
 
-5. Commandes disponibles dans la CLI :
+6. Commandes disponibles dans la CLI :
 
 ```
 add <task_name>    # ajoute une tâche
