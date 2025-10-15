@@ -1,0 +1,27 @@
+{
+  "name": "backendexercice2chloedallais",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-dal/backEndExercice2ChloeDallais.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-dal/backEndExercice2ChloeDallais/issues"
+  },
+  "homepage": "https://github.com/c-dal/backEndExercice2ChloeDallais#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
