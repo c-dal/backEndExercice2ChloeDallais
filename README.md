@@ -22,15 +22,16 @@ backEndExercice1ChloeDallais/
 │
 ├─ server.js               # Entrée du serveur Express
 ├─ package.json            # Dépendances Node.js
-├─ models/
-│  ├─ task.js              # Classe Task
-│  └─ todolist.js          # Classe ToDoList
-├─ controllers/
-│  └─ taskController.js    # Logique de gestion des routes et des commandes
-├─ routes/
-│  └─ taskRoutes.js        # Définition des endpoints de l’API
-└─ config/
-   └─ db.js            # Configuration de la base de données
+├─ src/
+   ├─ models/
+   │  ├─ task.js              # Classe Task
+   │  └─ todolist.js          # Classe ToDoList
+   ├─ controllers/
+   │  └─ taskController.js    # Logique de gestion des routes et des commandes
+   ├─ routes/
+   │  └─ taskRoutes.js        # Définition des endpoints de l’API
+   └─ config/
+      └─ db.js            # Configuration de la base de données
 ```
 
 ---
