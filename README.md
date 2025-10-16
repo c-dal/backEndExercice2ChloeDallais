@@ -22,8 +22,6 @@ backEndExercice1ChloeDallais/
 │
 ├─ server.js               # Entrée du serveur Express
 ├─ package.json            # Dépendances Node.js
-├─ .env                    # Variables d'environnement
-├─ .env.example            # Exemple de fichier .env
 ├─ models/
 │  ├─ task.js              # Classe Task
 │  └─ todolist.js          # Classe ToDoList
