@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotevn from 'dotenv';
-import taskRoutes from './routes/taskRoutes.js'; 
+import taskRoutes from './src/routes/taskRoutes.js'; 
 
 dotevn.config();
 
