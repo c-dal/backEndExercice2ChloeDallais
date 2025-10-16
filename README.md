@@ -29,8 +29,8 @@ backEndExercice1ChloeDallais/
 │  └─ taskController.js    # Logique de gestion des routes et des commandes
 ├─ routes/
 │  └─ taskRoutes.js        # Définition des endpoints de l’API
-└─ cli/
-   └─ cli.js               # Interface CLI qui consomme l’API via fetch ou axios
+└─ config/
+   └─ db.js            # Configuration de la base de données
 ```
 
 ---
