@@ -20,18 +20,17 @@ L’application utilise **Express** pour exposer une API, que la CLI consomme vi
 ```
 backEndExercice1ChloeDallais/
 │
-├─ server.js               # Entrée du serveur Express
-├─ package.json            # Dépendances Node.js
+├─ server.js                  # Entrée du serveur Express
+├─ package.json               # Dépendances Node.js
 ├─ src/
    ├─ models/
-   │  ├─ task.js              # Classe Task
-   │  └─ todolist.js          # Classe ToDoList
+   │  └─ todoModel.js         # Classe Todo
    ├─ controllers/
-   │  └─ taskController.js    # Logique de gestion des routes et des commandes
+   │  └─ todoController.js    # Logique de gestion des routes et des commandes
    ├─ routes/
    │  └─ taskRoutes.js        # Définition des endpoints de l’API
    └─ config/
-      └─ db.js            # Configuration de la base de données
+      └─ db.js                # Configuration de la base de données
 ```
 
 ---
