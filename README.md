@@ -58,22 +58,22 @@ Copier env.example en .env et modifier si nécessaire.
 4. Lancer le serveur Express :
 
 ```bash
-node server.js
+npm run dev
 ```
 
-5. Lancer l’application CLI dans un autre terminal :
-
-```bash
-node cli/cli.js
-```
-
-6. Commandes disponibles dans la CLI :
+5. Commandes disponibles dans la CLI (dans un autre terminal):
 
 ```
-add <task_name>    # ajoute une tâche
-delete <id>        # supprime une tâche par son ID
-display            # affiche toutes les tâches
-exit               # quitte l’application
+# ajouter une tâche
+curl -X POST http://localhost:3000/api/todos \
+     -H "Content-Type: application/json" \
+     -d '{"title": "Faire la vaisselle"}'
+
+# supprimer une tâche par son ID
+curl -X DELETE http://localhost:3000/api/todos/ID
+
+# afficher toutes les tâches
+curl http://localhost:3000/api/todos
 ```
 
 ---
