@@ -3,14 +3,28 @@ import pkg from "pg";
 
 dotenv.config();
 const { Pool } = pkg;
-
-// Connexion à PostgreSQL via les variables d’environnement
+ 
 const pool = new Pool({
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  host: process.env.HOST,
+  port: process.env.PORT,
+  database: process.env.DATABASE,
 });
-
+ 
+export const initPostgres = async () => {
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS tasks (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    console.log('PostgreSQL connected and table ready');
+  } catch (error) {
+    console.error('PostgreSQL error:', error);
+  }
+};
+ 
 export default pool;
