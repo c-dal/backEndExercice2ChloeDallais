@@ -52,17 +52,43 @@ npm install
 
 3. Configuration du projet :
 
-Copier env.example en .env et modifier si nécessaire.
-Créer la base todolist et sa table tasks dans PostgreSQL, avec tous les droits pour l'utilisateur choisi.
+```
+# copier env.example en .env et modifier si nécessaire.
+cp .env.example .env
+```
 
+4. Installation de la base de données :
 
-4. Lancer le serveur Express :
+Se connecter à la base avec le superuser
+```
+sudo -u postgres psql 
+```
+Créer la base et l'utilisateur
+```
+CREATE DATABASE todolist; 
+CREATE USER user WITH PASSWORD 'mdp';
+```
+Se connecter à todolist créer la table tasks
+```
+\c todolist
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL
+);
+```
+Gérer les droits de la base
+```
+GRANT ALL PRIVILEGES ON TABLE tasks TO user;
+GRANT ALL PRIVILEGES ON SEQUENCE tasks_id_seq TO user;
+```
+
+5. Lancer le serveur Express :
 
 ```bash
 npm run dev
 ```
 
-5. Commandes disponibles dans l'API (dans un autre terminal):
+6. Commandes disponibles dans l'API (dans un autre terminal):
 
 ```
 # ajouter une tâche
