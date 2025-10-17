@@ -78,24 +78,6 @@ curl http://localhost:3000/api/todos
 
 ---
 
-## Exemple
-
-```
-> add faire la vaisselle
-Tâche 'faire la vaisselle' ajoutée.
-> add plier le linge
-Tâche 'plier le linge' ajoutée.
-> display
-0. faire la vaisselle
-1. plier le linge
-> delete 0
-Tâche 0 supprimée.
-> display
-0. plier le linge
-```
-
----
-
 ## Notes techniques
 
 * Architecture **MVC** pour séparation des responsabilités
