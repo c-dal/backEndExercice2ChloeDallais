@@ -2,8 +2,8 @@
 
 ## Description
 
-Mini application **CLI** en Node.js pour gérer une liste de tâches.
-Conçue avec une architecture **MVC** et orientée objet (POO).
+Mini application **API REST** en Node.js pour gérer une liste de tâches.
+Conçue avec une architecture **MVC** et orientée objet (POO), avec stockage persistant dans **PostgreSQL**.
 
 Fonctionnalités :
 
@@ -50,9 +50,10 @@ cd backEndExercice1ChloeDallais
 npm install
 ```
 
-3. Configuration des variables d'environnement :
+3. Configuration du projet :
 
 Copier env.example en .env et modifier si nécessaire.
+Créer la base todolist et sa table tasks dans PostgreSQL, avec tous les droits pour l'utilisateur choisi.
 
 
 4. Lancer le serveur Express :
@@ -61,7 +62,7 @@ Copier env.example en .env et modifier si nécessaire.
 npm run dev
 ```
 
-5. Commandes disponibles dans la CLI (dans un autre terminal):
+5. Commandes disponibles dans l'API (dans un autre terminal):
 
 ```
 # ajouter une tâche
@@ -74,6 +75,8 @@ curl -X DELETE http://localhost:3000/api/todos/ID
 
 # afficher toutes les tâches
 curl http://localhost:3000/api/todos
+
+# sinon utiliser Postman avec les même endpoints
 ```
 
 ---
@@ -81,7 +84,8 @@ curl http://localhost:3000/api/todos
 ## Notes techniques
 
 * Architecture **MVC** pour séparation des responsabilités
-* **POO** pour modularité et extensibilité (`class Task` et `class ToDoList`)
-* Liste centralisée dans `ToDoList`
-* API avec **Express** pour exposer les actions `add`, `delete` et `display`
-* CLI communiquant avec l’API via requêtes HTTP (avec `fetch` ou `axios`)
+* **POO** pour modularité et extensibilité 
+* Persistance des données avec **PostgreSQL**
+* Contrôleur et modèle utilisant des méthodes **statiques** pour accéder à la DB
+* Tests via **curl**, Postman ou tout client HTTP
+
