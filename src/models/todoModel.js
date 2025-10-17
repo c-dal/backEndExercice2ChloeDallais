@@ -1,24 +1,24 @@
+import pool from "../config/db.js";
+
 export default class Todo {
-  constructor() {
-    this.todos = [];
-    this.id = 1;
+  static async getAll() {
+    const result = await pool.query("SELECT * FROM tasks ORDER BY id");
+    return result.rows;
   }
 
-  getAll() {
-    return this.todos;
+  static async addTask(title) {
+    const result = await pool.query(
+      "INSERT INTO tasks (title) VALUES ($1) RETURNING *",
+      [title]
+    );
+    return result.rows[0];
   }
 
-  addTask(title) {
-    const newTask = { id: this.id++, title };
-    this.todos.push(newTask);
-    return newTask;
-  }
-
-  deleteTask(id) {
-    const index = this.todos.findIndex(t => t.id === id);
-    if (index !== -1) {
-      return this.todos.splice(index, 1) [0];
-    }
-    return null;
+  static async deleteTask(id) {
+    const result = await pool.query(
+      "DELETE FROM tasks WHERE id = $1 RETURNING *",
+      [id]
+    );
+    return result.rows[0];
   }
 }

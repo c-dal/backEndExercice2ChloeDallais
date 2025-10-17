@@ -1,0 +1,16 @@
+import dotenv from "dotenv";
+import pkg from "pg";
+
+dotenv.config();
+const { Pool } = pkg;
+
+// Connexion à PostgreSQL via les variables d’environnement
+const pool = new Pool({
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT,
+});
+
+export default pool;
