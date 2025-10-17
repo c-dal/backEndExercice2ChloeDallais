@@ -88,4 +88,3 @@ curl http://localhost:3000/api/todos
 * Persistance des données avec **PostgreSQL**
 * Contrôleur et modèle utilisant des méthodes **statiques** pour accéder à la DB
 * Tests via **curl**, Postman ou tout client HTTP
-
