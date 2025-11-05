@@ -24,12 +24,15 @@ backEndExercice1ChloeDallais/
 ├─ package.json               # Dépendances Node.js
 ├─ src/
    ├─ models/
-   │  └─ todoModel.js         # Classe Todo
+   │  ├─ todoModel.js         # Classe Todo
+   │  ├─ todoMongo.js
+   │  └─ counterMongo.js
    ├─ controllers/
    │  └─ todoController.js    # Logique de gestion des routes et des commandes
    ├─ routes/
    │  └─ taskRoutes.js        # Définition des endpoints de l’API
    └─ config/
+      ├─ mongo.js             # Configuration de la base Mongo
       └─ db.js                # Configuration de la base de données
 ```
 
