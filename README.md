@@ -3,7 +3,7 @@
 ## Description
 
 Mini application **API REST** en Node.js pour gérer une liste de tâches.
-Conçue avec une architecture **MVC** et orientée objet (POO), avec stockage persistant dans **PostgreSQL**.
+Conçue avec une architecture **MVC** et orientée objet (POO), avec stockage persistant dans **PostgreSQL** ou **MongoDB**.
 
 Fonctionnalités :
 
@@ -111,6 +111,6 @@ curl http://localhost:3000/api/todos
 
 * Architecture **MVC** pour séparation des responsabilités
 * **POO** pour modularité et extensibilité 
-* Persistance des données avec **PostgreSQL**
+* Persistance des données avec **PostgreSQL** ou **MongoDB**
 * Contrôleur et modèle utilisant des méthodes **statiques** pour accéder à la DB
 * Tests via **curl**, Postman ou tout client HTTP
