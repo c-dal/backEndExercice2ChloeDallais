@@ -5,6 +5,7 @@
 Mini application **API REST** en Node.js pour gérer une liste de tâches.
 Conçue avec une architecture **MVC** et orientée objet (POO), avec stockage persistant dans **PostgreSQL** ou **MongoDB**.
 
+
 Fonctionnalités :
 
 * Ajouter / supprimer des tâches
@@ -12,7 +13,7 @@ Fonctionnalités :
 * Quitter l’application
 
 L’application utilise **Express** pour exposer une API, que la CLI consomme via des requêtes HTTP.
-
+Le stockage des tâches peut être basculé dynamiquement entre **PostgreSQL** et **MongoDB** via une variable d’environnement.
 ---
 
 ## Structure du projet
@@ -60,8 +61,20 @@ npm install
 cp .env.example .env
 ```
 
+```
+# Exemple de configuration pour MongoDB
+MONGO=true
+MONGO_URI=mongodb://localhost:27017/todolist
+```
+MONGO=true active MongoDB, sinon PostgreSQL est utilisé par défaut
+
 4. Installation de la base de données :
 
+Si vous utilisez MongoDB : Assurez-vous que le serveur MongoDB est lancé :  
+`sudo systemctl start mongod`  
+La base `todolist`sera créée automatiquement à la première insertion  
+
+Sinon, pour utiliser PostgreSQL (par défaut) :
 Se connecter à la base avec le superuser
 ```
 sudo -u postgres psql 
@@ -115,5 +128,6 @@ curl http://localhost:3000/api/todos
 * Architecture **MVC** pour séparation des responsabilités
 * **POO** pour modularité et extensibilité 
 * Persistance des données avec **PostgreSQL** ou **MongoDB**
+* Utilisation d'unn switch basé sur `process.env.MONGO` pour choisir le moteur de base de données
 * Contrôleur et modèle utilisant des méthodes **statiques** pour accéder à la DB
 * Tests via **curl**, Postman ou tout client HTTP
