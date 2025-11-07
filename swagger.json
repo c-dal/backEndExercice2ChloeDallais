@@ -1,0 +1,118 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ToDoList CLI API",
+    "description": "API REST pour gérer une liste de tâches via une CLI. Basculable entre PostgreSQL et MongoDB.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Serveur local"
+    }
+  ],
+  "paths": {
+    "/api/todos": {
+      "get": {
+        "summary": "Récupérer toutes les tâches",
+        "tags": ["Tâches"],
+        "responses": {
+          "200": {
+            "description": "Liste des tâches",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Todo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer une nouvelle tâche",
+        "tags": ["Tâches"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Tâche créée avec succès",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requête invalide"
+          }
+        }
+      }
+    },
+    "/api/todos/{id}": {
+      "delete": {
+        "summary": "Supprimer une tâche par ID",
+        "tags": ["Tâches"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la tâche à supprimer",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tâche supprimée avec succès"
+          },
+          "404": {
+            "description": "Tâche non trouvée"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Todo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "example": "Faire la vaisselle"
+          }
+        }
+      },
+      "TodoInput": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Faire la vaisselle"
+          }
+        }
+      }
+    }
+  }
+}
