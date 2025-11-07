@@ -14,6 +14,7 @@ Fonctionnalités :
 
 L’application utilise **Express** pour exposer une API, que la CLI consomme via des requêtes HTTP.
 Le stockage des tâches peut être basculé dynamiquement entre **PostgreSQL** et **MongoDB** via une variable d’environnement.
+
 ---
 
 ## Structure du projet
