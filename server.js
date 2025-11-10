@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Fonction d'initialisation globale
 async function startServer() {
