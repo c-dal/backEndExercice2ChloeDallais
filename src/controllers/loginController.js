@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
+import jwt from 'jsonwebtoken';
 
 export default class LoginController {
     static async login(req, res, next) {
@@ -21,8 +21,7 @@ export default class LoginController {
                 data: { userId: existingUser.id, email: existingUser.email, token },
             });
         } catch (err) {
-            console.error("Login error:", err);
-            next(err);
+            next(new Error("Error! Something went wrong."));
         }
     }
 
@@ -43,8 +42,7 @@ export default class LoginController {
                 data: { userId: newUser.id, email: newUser.email, token },
             });
         } catch (err) {
-            console.error("Signup error:", err);
-            next(err);
+            next(new Error("Error! Something went wrong."));
         }
     }
 }
